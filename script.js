@@ -24,6 +24,7 @@ const modalTitle = document.getElementById("modalTitle");
 const modalPrice = document.getElementById("modalPrice");
 const whatsappBtn = document.getElementById("whatsappBtn");
 const paymentDoneBtn = document.getElementById("paymentDoneBtn");
+const gpayBtn = document.getElementById("gpayBtn");
 const upiText = document.getElementById("upiText");
 
 function icon(name) {
@@ -53,6 +54,14 @@ function openOrder(name, price) {
   modalTitle.textContent = name;
   modalPrice.textContent = `₹${price}`;
   upiText.textContent = `UPI: ${UPI_ID}`;
+  const gpayParams = new URLSearchParams({
+    pa: UPI_ID,
+    pn: STORE_NAME,
+    am: price.toFixed(2),
+    cu: "INR",
+    tn: `${name} order`
+  });
+  gpayBtn.href = `tez://upi/pay?${gpayParams.toString()}`;
   const message = `Hello, I want to order ${name} for ₹${price}. I have completed the payment. I will send the payment screenshot here.`;
   whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   whatsappBtn.hidden = true;
