@@ -56,14 +56,18 @@ function openOrder(name, price) {
   const message = `Hello, I want to order ${name} for ₹${price}. I have completed the payment. I will send the payment screenshot here.`;
   whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   whatsappBtn.hidden = true;
+  whatsappBtn.style.display = "none";
   paymentDoneBtn.hidden = false;
+  paymentDoneBtn.style.display = "inline-block";
   modal.classList.add("show");
   modal.setAttribute("aria-hidden", "false");
 }
 
 paymentDoneBtn.addEventListener("click", () => {
   paymentDoneBtn.hidden = true;
+  paymentDoneBtn.style.display = "none";
   whatsappBtn.hidden = false;
+  whatsappBtn.style.display = "inline-block";
 });
 
 document.getElementById("closeModal").onclick = () => {
