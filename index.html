@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium account store">
+  <title>PremiumHub — Premium Accounts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="logo">Premium<span>Hub</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="badge">DIGITAL STORE</p>
+        <h1>Premium apps.<br><span>Simple ordering.</span></h1>
+        <p class="hero-text">Choose a product, check the price, pay using UPI and contact us on WhatsApp for delivery.</p>
+        <a href="#products" class="primary">Browse Accounts</a>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">OUR CATALOG</p>
+          <h2>Available Premium Accounts</h2>
+        </div>
+        <input id="search" type="search" placeholder="Search apps..." aria-label="Search apps">
+      </div>
+      <div id="productsGrid" class="grid"></div>
+    </section>
+
+    <section class="how section">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h2>3 simple steps</h2>
+      <div class="steps">
+        <div><b>01</b><h3>Choose</h3><p>Select the account you want.</p></div>
+        <div><b>02</b><h3>Pay</h3><p>Scan the UPI QR and complete payment.</p></div>
+        <div><b>03</b><h3>WhatsApp</h3><p>Send payment proof and order details on WhatsApp.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">Premium<span>Hub</span></div>
+    <p>Digital products store</p>
+    <small>Only sell accounts/subscriptions you are authorized to resell or transfer. Follow each service's terms.</small>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="closeModal" aria-label="Close">×</button>
+      <p class="eyebrow">ORDER</p>
+      <h2 id="modalTitle">Product</h2>
+      <div class="price" id="modalPrice">₹0</div>
+      <p class="muted">Scan the QR below to pay. After payment, tap WhatsApp and send your payment screenshot + product name.</p>
+      <img class="qr" id="qrImage" src="qr.png" alt="UPI payment QR">
+      <p class="upi" id="upiText">UPI: YOUR-UPI-ID</p>
+      <button class="primary full" id="paymentDoneBtn" type="button">I have completed payment</button>
+      <a class="primary full" id="whatsappBtn" href="#" target="_blank" rel="noopener" hidden>Continue on WhatsApp</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
